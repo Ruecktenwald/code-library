@@ -1,0 +1,23 @@
+<div class="  myaccordion">
+	<div class="label-style">
+		<%= @post.category.name %> 
+	</div>
+	<div class="label-style-btm middle">
+		<%= @post.description %><br>
+	</div><br>
+	<div class="code-background ">
+		<div class="container-fluid ">
+			<pre> 
+				<code class="text-color" id="t1"> 
+					<%= "\n#{@post.code}" %> 
+				</code>
+			</pre>
+		</div>
+	</div>
+	<br>
+	<% if policy(@post).update? %>
+  <div class="middle">
+   <%= link_to 'Edit', edit_post_path(@post), class: "edit-btn btn" %>
+   <%end%>
+ </div>
+</div> 

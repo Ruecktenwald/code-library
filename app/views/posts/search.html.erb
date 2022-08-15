@@ -1,0 +1,38 @@
+<h3 class="middle search-margin">Search Result</h3>  
+
+<% @post_results.each do |result| %>  
+<div class="">
+  <div class="myaccordion">
+    <div class="card">
+      <div class="card-header ">
+        <div class="label-style-category">Post</div>
+        <h2 class="mb-0 middle">
+          <button class=" btn btn-link text-color">
+            <%= link_to "#{result.description}", post_path(result), class: "nav-link posts" %><br>  
+          </button>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% @category_results.each do |result| %>  
+<div class="">
+  <div class="myaccordion">
+    <div class="card">
+      <div class="card-header ">
+        <div class="label-style-category"><%= link_to "Category", category_path(result), class: "label-style-top-four" %></div>
+        <h2 class="mb-0 middle">
+          <button class=" btn btn-link text-color">
+            <%= link_to "#{result.name}", category_posts_path(result), class: "nav-link posts" %><br>  
+          </button>
+          <div class="label-style-category">
+            <%=pluralize(result.posts.count, 'post')%>
+          </div>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

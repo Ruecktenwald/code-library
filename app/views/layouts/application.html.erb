@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+	<meta charset="utf-8">
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css' />
+</head>
+
+<div id="flash_messages"><%= flash_messages(:close) %></div>
+<div class="top-bar"></div>
+<%= render 'layouts/nav' %>
+<%= render 'layouts/top_four' %>
+<%= render 'layouts/search_bar' %>
+
+<body>
+	<%= yield %>
+  <% if user_signed_in? %> 
+  <div class="myaccordion-back">
+    <%= link_to "Back", :back, class: "label-style-top-four " %>
+  </div>
+  <%end%>
+</body>
+
+<%= render 'layouts/footer' %>
+</html>
