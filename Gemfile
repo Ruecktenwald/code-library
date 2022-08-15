@@ -36,7 +36,7 @@ group :development, :test do
   gem 'pry-rails'
 end
 
-group :production do
+group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
